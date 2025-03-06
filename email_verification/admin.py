@@ -1,7 +1,8 @@
 from django.contrib import admin
-from .models import EmailVerification
+from .models import User
 
-@admin.register(EmailVerification)
-class EmailVerificationAdmin(admin.ModelAdmin):
-    list_display = ("email", "code", "created_at")
-    search_fields = ("email",)
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('email', 'verification_code', 'is_verified')
+    search_fields = ('email',)
+    list_filter = ('is_verified',)

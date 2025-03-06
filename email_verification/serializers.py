@@ -1,7 +1,8 @@
 from rest_framework import serializers
-from .models import EmailVerification
+from .models import User
 
-class EmailVerificationSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = EmailVerification
-        fields = ['email']
+        model = User
+        fields = ['email', 'verification_code', 'is_verified']
+        read_only_fields = ['verification_code', 'is_verified']

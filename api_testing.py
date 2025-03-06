@@ -15,7 +15,7 @@ import requests
 
 api_url = 'http://127.0.0.1:8000/email/send/'
 data = {
-        'email': 'tomsmith@gmail.com',
+        'email': 'azizbekrahimjonov8005@gmail.com',
         }
 
 response = requests.post(api_url, json=data)
